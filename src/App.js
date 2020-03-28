@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Data from './Data'
+import App2 from './App2'
 import './App.css';
 
 class App extends Component {
@@ -44,7 +45,10 @@ class App extends Component {
 
       :
       
-      <Data deaths={this.state.deaths} confirmed={this.state.confirmed} recovered={this.state.recovered}></Data>
+      <>
+        <Data deaths={this.state.deaths} confirmed={this.state.confirmed} recovered={this.state.recovered}></Data>
+        <App2></App2>
+      </>
     )
     
   }
