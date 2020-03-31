@@ -1,57 +1,33 @@
-import React, { Component } from 'react';
-import Data from './Data'
-import App2 from './App2'
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Home from './Home'
+import Spain from './Spain'
 
-class App extends Component {
+export default function App() {
+    return (
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/spain">Spain</Link>
+                </li>
+              </ul>
+            </nav>
 
-  constructor(){
-    super()
-
-    this.state = {
-      confirmeddeaths: null,
-      confirmed: null,
-      recovered: null ,
-      loading: true
-    }
-
-  }
-
-  async componentDidMount () {
-
-    try{
-
-      const response = await fetch('https://enrichman.github.io/covid19/world/full.json')
-      const data = await response.json()
-
-      this.setState({
-        deaths: data.deaths,
-        confirmed: data.confirmed,
-        recovered: data.recovered,
-        loading: false
-      })
-
-    } catch (e){
-      console.log(e)
-    }
-  }
-
-  render(){
-    
-    return(
-      this.state.loading ?
-     
-      <div>Cargando los datos de hoy ...</div> 
-
-      :
-      
-      <>
-        <Data deaths={this.state.deaths} confirmed={this.state.confirmed} recovered={this.state.recovered}></Data>
-        <App2></App2>
-      </>
-    )
-    
-  }
+            <Switch>
+              <Route path="/spain">
+                <Spain />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      )
 }
 
-export default App;
