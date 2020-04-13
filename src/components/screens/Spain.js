@@ -1,6 +1,6 @@
 import React from 'react';
-import DataList from './Data'
-import useFetch from './hooks/useFetch'
+import DataList from '../UI/Data'
+import useFetch from '../../hooks/useFetch'
 const Spain = () =>{
 
   const {data,loading} = useFetch(`https://enrichman.github.io/covid19/world/spain/data.json`)

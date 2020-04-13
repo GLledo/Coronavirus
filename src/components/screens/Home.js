@@ -1,6 +1,6 @@
 import React from 'react';
-import Data from './Data'
-import useFetch from './hooks/useFetch'
+import Data from '../UI/Data'
+import useFetch from '../../hooks/useFetch'
 
 const Home = () =>{
 

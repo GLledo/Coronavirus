@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DataCard from './components/DataCard'
-import FlexContainer from './components/FlexContainer'
+import DataCard from './DataCard'
+import FlexContainer from './FlexContainer'
 
 const Data = ({deaths,confirmed,recovered}) => (
     <FlexContainer>
